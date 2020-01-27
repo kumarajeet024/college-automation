@@ -40,9 +40,10 @@
     <h6 class="powered-by">Powered by Team OSS</h6>
 </div>
 <header class="navbar-fixed">
+@if (Auth::user())
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#">{{ Auth::user()->name }}</a></li>
-        <li class="divider"></li>
+        <li><a href="#">{{ Auth::user()->user_id }}</a></li>
+           <li class="divider"></li>
         <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout <i class="fa fa-power-off right"></i></a></li>
@@ -53,6 +54,7 @@
                                 </ul>
                             </li>
     </ul>
+    @endif 
     <nav class="green darken-2">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo center">GreenBoard <i class="fa fa-pencil right"></i></a>

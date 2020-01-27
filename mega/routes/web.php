@@ -17,22 +17,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth','guest');
+
 Route::get('/admin',function(){
     return view('admin');
-});
+})->middleware('auth','role:admin');
+
 Route::get('/hod',function(){
     return view('hod');
-});
+})->middleware('auth','role:Hod');
+
 Route::get('/faculty',function(){
     return view('faculty');
-});
+})->middleware('auth','role:faculty');
+
 Route::get('/student',function(){
     return view('student');
-});
-Auth::routes();
+})->middleware('auth','role:student');
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/mistake',function(){
     return view('mistaken');
 })->name('mistake');

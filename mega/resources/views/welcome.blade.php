@@ -73,17 +73,17 @@
                         <div class="card-title center-align"><h4>Sign In Faculty</h4></div>
                         <p class="center blue-text">Sign in to access your something something</p>
                         <div class="row">
-                            <form class="col s12">
-
+                            <form class="col s12" method="POST"action="{{ route('login') }}">
+                        @csrf
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix msr">perm_identity</i>
-                                        <input id="email" type="email">
+                                        <input id="email" type="email" name="email">
                                         <label for="email">Username</label>
                                     </div>
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix msr">lock_open</i>
-                                        <input id="password" type="password" >
+                                        <input id="password" type="password" name="password">
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
@@ -134,17 +134,18 @@
                         <div class="card-title center-align"><h4>Sign In Student</h4></div>
                         <p class="center blue-text">Sign in to access your something something</p>
                         <div class="row">
-                            <form class="col s12">
+                        <form class="col s12" method="POST" action="{{ route('login') }}">
+                        @csrf
 
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix msr">perm_identity</i>
-                                        <input id="email" type="email">
+                                        <input id="email" type="email" name="email">
                                         <label for="email">Username</label>
                                     </div>
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix msr">lock_open</i>
-                                        <input id="password" type="password" >
+                                        <input id="password" type="password" name="password">
                                         <label for="password">Password</label>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 @php
     $user=session('username');
-    $category=\App\User::where('user_id','awse')->first()->role;
+    $category=\App\User::where('user_id','fafa')->first()->role;
 @endphp
         <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +50,6 @@
         <li><a href="{{ route('register') }}">Register</a></li>
     @else
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#">{{ Auth::user()->firstname }}</a></li>
             <li class="divider"></li>
             <li><a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
@@ -70,7 +69,7 @@
             <ul class="right hide-on-med-and-down">
                 <!-- Dropdown Trigger -->
                 <li><a href="#">Go to Moodle!</a></li>
-
+                <li><a href="#">Admin</a></li>
 
                 <li><a class="dropdown-button" href="#" data-activates="dropdown1">
                         <img class="icon mx-5" src="/images/profile-image-1.png" align="center"> <i

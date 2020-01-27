@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Faculty
+class CheckRole
 {
     /**
      * Handle an incoming request.
@@ -13,8 +13,12 @@ class Faculty
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
+    public function handle($request, Closure $next,$role)
+      { 
+            if(!$request->user()->hasRole($role))
+             {
+                 abort(401);
+             }
         return $next($request);
     }
 }
